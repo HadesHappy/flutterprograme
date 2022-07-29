@@ -1,0 +1,60 @@
+# Meta Data for SEO
+
+## Homepage
+title = "Programmer"
+titleSeparator = "-"
+titleAddition = "C++ articles and stories"
+description = "C++ programming"
+
+## Open Graph + Twitter Cards
+images = ["doks.png"]
+twitterSite = "fluentprogrammr"
+twitterCreator = "fluentprogrammer"
+facebookAuthor = "fluentprogrammer"
+facebookPublisher = "fluentprogrammer"
+ogLocale = "en_US"
+
+## JSON-LD
+schemaType = "Organization"
+schemaLogo = "logo-doks.png"
+schemaTwitter = "https://twitter.com/fluentprogrammr"
+schemaLinkedIn = "https://www.linkedin.com/company/fluentprogrammer/"
+schemaGitHub = "https://github.com/"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = true
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+
+# Footer
+footer1 = "Powered by programmers to help programmers."
+footer2 = "Copyright FluentProgrammer.com 2021."
+footer3 = "All rights reserved."
+
+# Alert
+alert = false
+alertText = 'Disclaimer: All data and information provided on this site are for informational purposes only. This site contains ads or referral links, which provide us with a commission. Read our privacy policy <b><u><a href="/privacy-policy/" style="color:#ffffff;">here</a></u></b>. Thank you for your understanding. Subscribe to recieve our weekly newsletter. ❤️ Thanks!'
+
+# Edit Page
+#docsRepo = "https://github.com/h-enk/doks"
+#editPage = false
+
+[options]
+  lazySizes = true
+  clipBoard = true
+  instantPage = true
+  flexSearch = false
+  darkMode = false
+  bootStrapJs = false
+  breadCrumb = false
+  highLight = true
+  kaTex = false

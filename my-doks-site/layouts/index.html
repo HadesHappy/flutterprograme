@@ -1,0 +1,119 @@
+{{ define "main" }}
+<!--<section class="section container-fluid mt-n3 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-0">{{ .Title }}</h1>
+    </div>
+    <<div class="col-lg-9 col-xl-8 text-center">
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ "articles/" | relURL }}" role="button">Get started</a>
+      <p class="meta">Become a Fluent Programmer - <a href="https://www.fluentprogrammer.com">Expert level. </a></p>
+    </div>
+  </div>
+</section>-->
+{{ end }}
+
+{{ define "sidebar-prefooter" }}
+<section class="section section-sm container-fluid mobile-hide desktop-height">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">
+      {{- .Content -}}
+    </div>
+  </div>
+</section>
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center text-center mt-4">
+      <div class="col-lg-5 blog-container">
+        <div class="">
+          <p class="blog-content">C++ had value categories in C++0X version. The two value categories that were before C++11 are lvalues and rvalues. One of the greatest addition to C++11 was the introduction of movable types. Learning about the value categories is one of the pre-requisites to learn about move semantics. A
+            ny expression before the C++11 standard was either lvalue or rvalue. lvalue has an identity and its lifetime depends on the scope of the variable. On the other hand, rvalues don't have an identity and it does not live beyond the life of the expression.
+          </p>
+        </div>
+        <div class="">
+          <h2 class="h4">
+            <a href="https://www.fluentprogrammer.com/taxonomy-of-expression-value-categories-in-cpp/">A Taxonomy of Expression Value Categories in C++ ⚡️</a>
+          </h2>
+        </div>
+      </div>
+
+      <div class="col-lg-5 blog-container">
+        <div class="">
+          <p class="blog-content">In this blog post, we will learn advanced template programming concepts. These concepts
+            include how to change the implementation of classes and functions based on the type provided, how to work with
+            different arguments and how to properly forward them, how to optimize the code in both runtime and compile-time,
+            about SFINAE, std::enable_if, std::enable_if_t. </p>
+        </div>
+        <div class="">
+          <h2 class="h4"><a href="https://www.fluentprogrammer.com/using-templates-for-generic-programming-sfinae-enable_if/">Using Templates for Generic Programming - Part 1 (Embracing the beauty of SFINAE and enable_if) ⚡️</a></h2>
+        </div>
+      </div>
+      <div class="col-lg-5 blog-container">
+        <div class="">
+          <p class="blog-content">Overloaded functions have the exact same code but the type is different. It seems an unnecessary overhead to write the same code again and again and in a long time it adds up to the maintenance cost of the project. To write code once and use it multiple times we use function templates. A function template is itself is not a definition of a function; it is a blueprint for defining a family of functions. The standard library makes heavy use of function templates and makes sure it works optimally with all data types including the custom types we define in the program. 
+            This blog post covers the basics of function templates that work with all the data types you desire.</p>
+        </div>
+          <div class="">
+            <h2 class="h4"><a href="https://www.fluentprogrammer.com/function-templates-in-c-plus-plus/">An Introduction to
+                Function Templates in C++ ⚡️</a></h2>
+          </div>
+      </div>
+    </div>
+    <div class="row justify-content-center text-center mt-4">
+      <div class="col-lg-5 blog-container">
+        <div class="">
+          <p class="blog-content">Quoting from the C++ Standard ($7.1.5.1/8) [..] volatile is a hint to the implementation to
+            avoid aggressive optimization involving the object because the value of the object might be changed by means
+            undetectable by an implementation.[…]</p>
+        </div>
+        <div class="">
+          <h2 class="h4"><a href="https://www.fluentprogrammer.com/volatile-keyword-in-c-and-c-plus-plus/">Volatile Keyword in C & C++ ⚡️</a></h2>
+        </div>
+      </div>
+      <div class="col-lg-5 blog-container">
+        <div class="">
+          <p class="blog-content">Never try to import the whole std namespace into your program. Namespaces are developed to
+            avoid naming conflicts. But, when we import the whole namespace there is a possibility that this could lead to name
+            conflicts. You can do more harm than more good.
+          </p>
+        </div>
+        <div class="">
+          <h2 class="h4"><a href="https://www.fluentprogrammer.com/dont-use-using-namespace-std/">C++ Best Practice #1: Don't simply use: using namespace std; ⚡️</a></h2>
+        </div>
+      </div>
+      <div class="col-lg-5 blog-container">
+        <div class="">
+          <p class="blog-content">Emojis are supported on iOS, Android, macOS, Windows, Linux and ChromeOS. Copy and paste
+            emojis for Twitter, Facebook, Slack, Instagram, Snapchat, Slack, GitHub, Instagram, WhatsApp and more. Use Emoji
+            Classic on older systems.
+          </p>
+        </div>
+        <div class="">
+          <h2 class="h4"><a href="https://www.fluentprogrammer.com/copy-and-paste-emoji/">✂️ Copy and 📋 Paste Emoji ⚡️</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "sidebar-footer" }}
+<section class="section section-sm container-fluid mobile-hide desktop-height">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">
+      {{- .Content -}}
+    </div>
+  </div>
+
+  <!--<div align="center">
+  <form action="">
+    <h2>Get our weekly newsletter</h2>
+    <p>Up-to-date resources, and first-hand accounts to help you in your programming journey.</p>
+    <input name="mailinglist" value="blog@fluentprogrammer.com" type="hidden"/>
+    <input name="email" type="email" placeholder="sinu@mail.ee"/>
+    <input type="submit" class="btn btn-primary btn-lg px-4 mb-2"/>
+  </div>
+</form>-->
+
+</section>
+{{ end }}

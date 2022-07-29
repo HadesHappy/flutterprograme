@@ -1,0 +1,103 @@
+<div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md dark-color">
+  <div class="container">
+    <input class="menu-btn order-0" type="checkbox" id="menu-btn">
+    <label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+    <!--<a class="navbar-brand" href="{{"/" | relURL}}"><img src= "/images/logo.png" width="300" height="100" alt="Test"></a>-->
+    <a class="navbar-brand order-1 order-md-0 me-auto" href="{{ "/" | relURL }}"><span style="color:white ;">FLUENT&nbsp;</span>{{ .Site.Params.Title }}</a>
+    {{ if .Site.Params.options.darkMode -}}
+    <button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+      <span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+    </button>
+    {{ end -}}
+    <ul class="navbar-nav social-nav order-3 order-md-5">
+      {{ range .Site.Menus.social -}}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<span class="ms-2 visually-hidden">{{ .Name | safeHTML }}</span></a>
+        </li>
+      {{ end -}}
+    </ul>
+    <div class="collapse navbar-collapse order-4 order-md-1">
+      <ul class="navbar-nav main-nav me-auto order-5 order-md-2">
+        {{- $current := . -}}
+        {{ range .Site.Menus.main -}}
+          {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+          {{- $active = or $active (eq .Name $current.Title) -}}
+          {{- $active = or $active (and (eq .Name "Docs") (eq $current.Section "docs")) -}}
+          {{- $active = or $active (and (eq .Name "Guides") (eq $current.Section "guides")) -}}
+          {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "authors")) -}}
+          <li class="nav-item{{ if $active }} active{{ end }}">
+            <a class="nav-link" href="{{ .URL | relURL }}">{{ .Name }}</a>
+          </li>
+        {{ end -}}
+      </ul>
+      <div class="break order-6 d-md-none"></div>
+      {{ if .Site.Params.options.flexSearch -}}
+      <form class="navbar-form flex-grow-1 order-7 order-md-3">
+        <input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..." aria-label="Search docs..." autocomplete="off">
+        <div id="suggestions" class="shadow bg-white rounded"></div>
+      </form>
+      {{ end -}}
+    </div>
+  </div>
+</header>
+<style>
+    .language-CPP{font-size:medium;}
+                      .c{color:#998;font-style:italic}.highlight 
+                      .k{color:#458;font-weight:700}.highlight 
+                      .o{color:red}.highlight 
+                      .p{color:red}.highlight 
+                      .err{color:red}.highlight 
+                      .cm{color:#998;font-style:italic}.highlight 
+                      .cp{color:green;font-weight:700}.highlight 
+                      .c1{color:#998;font-style:italic}.highlight 
+                      .cs{color:#999;font-weight:700;font-style:italic}.highlight 
+                      .gd{color:#000;background-color:#fdd}.highlight 
+                      .gd .x{color:#000;background-color:#faa}.highlight 
+                      .ge{font-style:italic}.highlight 
+                      .gr{color:#a00}.highlight 
+                      .gh{color:#999}.highlight 
+                      .gi{color:#000;background-color:#dfd}.highlight 
+                      .gi .x{color:#000;background-color:#afa}.highlight 
+                      .go{color:#888}.highlight .gp{color:#555}.highlight 
+                      .gs{font-weight:700}.highlight .gu{color:#aaa}.highlight 
+                      .gt{color:#a00}.highlight 
+                      .kc{color:#458;font-weight:700}.highlight 
+                      .kd{color:#458;font-weight:700}.highlight 
+                      .kp{color:#458;font-weight:700}.highlight 
+                      .kr{color:#458;font-weight:700}.highlight 
+                      .kt{color:#458;font-weight:700}.highlight 
+                      .m{color:#ff8000}.highlight .s{color:green}.highlight 
+                      .ow{font-weight:700}.highlight .w{color:#bbb}.highlight 
+                      .mf{color:#ff8000}.highlight .mh{color:#ff8000}.highlight 
+                      .mi{color:#ff8000}.highlight .mo{color:#ff8000}.highlight 
+                      .sb{color:#d14}.highlight .sc{color:#d14}.highlight 
+                      .sd{color:#d14}.highlight .s2{color:#d14}.highlight 
+                      .se{color:#d14}.highlight .sh{color:#d14}.highlight 
+                      .si{color:#d14}.highlight .sx{color:#d14}.highlight 
+                      .sr{color:#009926}.highlight .s1{color:#d14}.highlight 
+                      .ss{color:#990073}.highlight .bp{color:#999}.highlight 
+                      .vc{color:teal}.highlight .vg{color:teal}.highlight 
+                      .vi{color:teal}.highlight .il{color:#099}
+
+                      
+                    code {
+                        font-family: Inconsolata,monospace,sans-serif;
+                        border: 0.01px solid;
+                    }
+
+                    blockquote {
+                            padding: 0 0 0 1.5em;
+                            margin-left: 0;
+                            border-left: 0.5em solid gray;
+                    }
+                    blockquote {
+                        display: block;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
+                        margin-inline-start: 40px;
+                        margin-inline-end: 40px;
+                    }
+</style>
+

@@ -1,0 +1,74 @@
+<style>
+
+.circle-sketch-highlight{
+  position:relative;
+}
+.circle-sketch-highlight:before{
+  content:"";
+  z-index:-1;
+  left:-0.5em;
+  top:-0.1em;
+  border-width:2px;
+  border-style:solid;
+  border-color:red;
+  position:absolute;
+  border-right-color:transparent;
+  width:100%;
+  height:1em;
+  transform:rotate(2deg);
+  opacity:0.7;
+  border-radius:50%;
+  padding:0.1em 0.25em;
+}
+.circle-sketch-highlight:after{
+  content:"";
+  z-index:-1;
+  left:-0.5em;
+  top:0.1em;
+  padding:0.1em 0.25em;
+  border-width:2px;
+  border-style:solid;
+  border-color:red;
+  border-left-color:transparent;
+  border-top-color:transparent;
+  position:absolute;
+  width:100%;
+  height:1em;
+  transform:rotate(-1deg);
+  opacity:0.7;
+  border-radius:50%;
+}
+</style>
+<footer class="footer text-muted">
+  <div class="container">
+    <div class="row direction-col">
+      <div class="col-lg-16 order-last order-lg-first text-center">
+        <ul class="list-inline">
+          <li class="list-inline-item">{{ .Site.Params.footer1 | safeHTML }}</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-16 order-last order-lg-first text-center">
+        <ul class="list-inline">
+          <li class="list-inline-item">{{ .Site.Params.footer2 | safeHTML }}</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-16 order-last order-lg-first text-center">
+        <ul class="list-inline">
+          <li class="list-inline-item">{{ .Site.Params.footer3 | safeHTML }}</li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-16 order-first order-lg-last text-lg-end text-center mt-2">
+        <ul class="list-inline text-center">
+          {{ range .Site.Menus.footer -}}
+            <li class="list-inline-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+          {{ end -}}
+        </ul>
+      </div>
+    </div>
+    <!-- <h1 style="color:black;"><bold><center>{Unhealthy love with <span class="circle-sketch-highlight">dark corners</span> of C++}</center></bold></h1> -->
+  </div>
+
+</footer>
